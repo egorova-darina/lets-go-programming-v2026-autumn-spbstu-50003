@@ -1,3 +1,39 @@
+package main
+
+import (
+    "bufio"
+    "fmt"
+    "os"
+    "strconv"
+    "strings"
+)
+
+func main() {
+    scanner := bufio.NewScanner(os.Stdin)
+
+    first, ok := readLine(scanner)
+    if !ok {
+        fmt.Println("Invalid first operand")
+        return
+    }
+
+    a, err := strconv.Atoi(first)
+    if err != nil {
+        fmt.Println("Invalid first operand")
+        return
+    }
+
+    second, ok := readLine(scanner)
+    if !ok {
+        fmt.Println("Invalid second operand")
+        return
+    }
+
+    b, err := strconv.Atoi(second)
+    if err != nil {
+        fmt.Println("Invalid second operand")
+        return
+    }
 
     operation, ok := readLine(scanner)
     if !ok || len(operation) != 1 {
